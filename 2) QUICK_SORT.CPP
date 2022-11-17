@@ -18,7 +18,7 @@ void quicksort(int arr[],int low,int high){
     if(low >= high) return ;
     int loc = partition(arr,low,high);
     quicksort(arr,low,loc-1);
-    quicksort(arr,loc+1,low);
+    quicksort(arr,loc+1,high);
 }
 
 int main()
