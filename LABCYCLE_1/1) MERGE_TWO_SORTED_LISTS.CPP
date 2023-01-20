@@ -1,6 +1,4 @@
 // PROBLEM LINK --- https://leetcode.com/problems/merge-two-sorted-lists/description/
-// PROBLEM LINK --- https://practice.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1
-// PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/merge-two-sorted-linked-lists_800332
 
 #include<bits/stdc++.h>
 using namespace std ;
