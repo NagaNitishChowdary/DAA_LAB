@@ -1,18 +1,5 @@
-// PROBLEM LINK ---  https://leetcode.com/problems/coin-change/
-
 #include <bits/stdc++.h> 
 using namespace std ;
-
-int recursion(int ind,int amount,vector<int> &coins){
-    if(ind == 0){
-        if(amount%coins[ind] == 0) return amount/coins[ind] ;
-        else return 1e9 ;
-    }
-    int notPick = 0 + recursion(ind-1,amount,coins) ;
-    int pick = INT_MAX ;
-    if(coins[ind] <= amount) pick = 1 + recursion(ind,amount-coins[ind],coins);
-    return min(pick,notPick) ;
-}
 
 int memorization(int ind,int amount,vector<int> &coins,vector<vector<int>> &dp){
     if(ind == 0){
@@ -28,14 +15,6 @@ int memorization(int ind,int amount,vector<int> &coins,vector<vector<int>> &dp){
 
 int coinChange(vector<int>& coins, int amount)
 {
-    // Write your code here.
-    // RECURSION
-    // int n = coins.size() ;
-    // int ans = recursion(n-1,amount,coins);
-    // if(ans >= 1e9) return -1;
-    // return ans ;
-    
-    // MEMORIZATION
     int n = coins.size() ;
     vector<vector<int>> dp(n,vector<int>(amount+1,-1));
     int ans = memorization(n-1,amount,coins,dp) ;
