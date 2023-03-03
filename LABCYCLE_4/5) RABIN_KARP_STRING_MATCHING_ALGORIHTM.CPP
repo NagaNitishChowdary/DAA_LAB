@@ -16,7 +16,7 @@ void solve(string text,string pattern,int q){
         t = (d*t + text[i])%q ;
     }
 
-    for(int i=0 ; i<n-m ; i++){
+    for(int i=0 ; i<n-m+1 ; i++){
         // SLIDE THE WINDOW OVER TEXT ONE BY ONE
         if(p == t){
             // IF HASH VALUES ARE EQUAL THEN CHECK FOR CHARACTERS ONE BY ONE
