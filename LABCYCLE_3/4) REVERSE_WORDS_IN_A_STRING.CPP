@@ -23,6 +23,26 @@ string reverseWords(string s) {
     return ans ;
 }
 
+// USING STACK
+string reverseWords1(string str){
+    string ans = ""  , knnc = "" ;
+    stack<string> st ;
+    for(int i=0 ; i<str.size() ; i++){
+        if(str[i] == ' '){
+            if(knnc != "") st.push(knnc) ; knnc = "" ;
+        }
+        else knnc += str[i] ;
+    }
+    st.push(knnc) ;
+
+    while(!st.empty()){
+        ans += st.top() ;
+        st.pop() ;
+        ans += " " ;
+    }
+    return ans ;
+}
+
 int main(int argc,char const *argv[]) {
     int testCases ; cin >> testCases ; 
     while(testCases--){
